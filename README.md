@@ -18,13 +18,6 @@ version: "3"
 services:
   app:
     image: chrsep/go-devtools:latest
-    # Security options required to enable delve debugger in docker. This project is partly inspired by jetbrains's blog:
-    # https://blog.jetbrains.com/go/2018/04/30/debugging-containerized-go-applications/
-    security_opt:
-      - "apparmor=unconfined"
-    cap_add:
-      - "SYS_PTRACE"
-
     # Mount your project somewhere in the src's subdirectory. Air will restart your app when any go files
     # inside /src directory changes. For intellij's debugger to work, you need to mount to a directory with the same
     # name as your project's folder. Eg. project example should be mounted to directory such as /src/example.

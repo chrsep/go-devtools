@@ -8,10 +8,10 @@ services:
     volumes:
     - .:/src/example
     # Security options required to enable delve debugger in docker
-    security_opt:
-      - "apparmor=unconfined"
-    cap_add:
-      - "SYS_PTRACE"
+#    security_opt:
+#      - "apparmor=unconfined"
+#    cap_add:
+#      - "SYS_PTRACE"
     # Tell the container where to find the entry point
     # to your source code.
     environment:
