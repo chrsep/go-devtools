@@ -4,6 +4,11 @@
 
 Simple Docker image for a nice go apps development experience. 
 
+## Example usage
+These are a few example of usage you could try to run:
+1. Simple example in the [./example](https://github.com/chrsep/go-devtools/blob/master/example/docker-compose.yml) folder
+1. A more complex usage on my other [project](https://github.com/chrsep/vor/blob/master/docker-compose.yml) folder
+
 ## Features
 1. live-reload, using [air](https://github.com/cosmtrek/air) 
 2. debugger, using [go-delve](https://github.com/go-delve/delve). Runs on port `40000`
@@ -34,12 +39,20 @@ services:
     - 40000:40000
     # App's port
     - 8080:8080
-```
-Example dummy project on the `example` directory.
 
+    # Might not be necessary for all projects, but these
+    # fixes delve crash on circleci
+    security_opt:
+      - "apparmor=unconfined"
+    cap_add:
+      - "SYS_PTRACE"
+```
 
 ## Goal
 Make bootstrapping and running useful common go development tools as easy as adding a single file and running a single command.
 
 ## Contributing
 I would love to include more tools that would improve developer ergonomics while developing go apps. Feel free to open an issue or pull requests to suggest things that can be improved.
+
+
+[examok]: https://github.com/chrsep/go-devtools/blob/master/example/docker-compose.yml
