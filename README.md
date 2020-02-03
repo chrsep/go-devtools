@@ -7,7 +7,7 @@ Simple Docker image for a nice go apps development experience.
 ## Example usage
 These are a few example of usage you could try to run:
 1. Simple example in the [./example](https://github.com/chrsep/go-devtools/blob/master/example/docker-compose.yml) folder
-1. A more complex usage on my other [project](https://github.com/chrsep/vor/blob/master/docker-compose.yml) folder
+1. A more complex usage on my other [project](https://github.com/chrsep/vor/blob/master/docker-compose.yml).
 
 ## Features
 1. live-reload, using [air](https://github.com/cosmtrek/air) 
