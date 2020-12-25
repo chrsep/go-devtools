@@ -1,11 +1,10 @@
-FROM golang:1.13
+FROM golang:1.15
 
 ENV GO111MODULE=on
 #ENV CGO_ENABLED=0
 
 RUN go get github.com/go-delve/delve/cmd/dlv
-RUN curl -fLo /usr/bin/air https://raw.githubusercontent.com/cosmtrek/air/master/bin/linux/air
-RUN chmod +x /usr/bin/air
+RUN go get -u github.com/cosmtrek/air
 COPY ./.air.conf .
 
 EXPOSE 8080 40000
